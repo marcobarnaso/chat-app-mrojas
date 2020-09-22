@@ -8,48 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Chat App</title>
-
-    <h1>Chat App</h1>
-
 </head>
 
 <body>
-    <div class="chat">
-        <div id="sidebar" class="chat__sidebar">
-        </div>
-        <div class="chat__main">
-            <div id="messages" class="chat__messages"></div>
-            <div class="compose">
-                <form id="messageForm" autocomplete="off">
-                    <input name="message" placeholder="Input message here" required autocomplete="off">
-                    <button id="sendButton">Send</button>
-                </form>
-                <button style="width: 120px" id="sendLocation">Send Location</button>
+    <div class="chat-container">
+        <h1>Chat App</h1>
+        <div class="chat">
+            <div id="sidebar" class="chat__sidebar">
+            </div>
+            <div class="chat__main">
+                <div id="messages" class="chat__messages"></div>
+                <div class="compose">
+                    <form id="messageForm" autocomplete="off">
+                        <input name="message" placeholder="Input message here" required autocomplete="off">
+                        <button id="sendButton">Send</button>
+                    </form>
+                    <button style="width: 120px" id="sendLocation">Send Location</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script id="message-template" type="text/html">
-
         <div class="message">
 
             <p>
                 <span class="message__name">{{username}}</span>
-                <span cass="message__meta">{{createdAt}}</span>                 
+                <span cass="message__meta">{{createdAt}}</span>
             </p>
             <p>{{message}}</p>
-            
-        </div>
 
+        </div>
     </script>
 
     <script id="location-template" type="text/html">
-
         <div>
             <span class="message__name">{{username}}</span>
             <p>{{createdAt}} - <a href={{location}} target="_blank">My Location</a></p>
         </div>
-
     </script>
 
     <script id="sidebar-template" type="text/html">
@@ -57,7 +53,7 @@
         <h3 class="list-title">Users</h3>
         <ul class="users">
             {{#users}}
-                <li>{{username}}</li>
+            <li>{{username}}</li>
             {{/users}}
         </ul>
     </script>
